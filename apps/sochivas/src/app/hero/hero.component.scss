@@ -1,0 +1,12 @@
+.hero{
+    width: 100vw;
+    // height: calc(100vh - 100px);
+    padding: 4em 0;
+    // max-width: 100vw;
+    box-sizing: border-box;
+    img{
+        width: 100%;
+        // max-width: 100vw;
+        height: fit-content;
+    }
+}

@@ -1,0 +1,57 @@
+
+
+.navbar {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+    background-color: white;
+}
+
+.logo {
+    max-height: 100%;
+    height: 100%;
+    img{
+        height: 100%;
+    }
+}
+
+
+.menu {
+    max-height: 100%;
+    height: 100%;
+    padding: 0 2em;
+}
+
+.menu-list{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    text-decoration: none;
+    list-style: none;
+    .inscriptions {
+        background-color: var(--colorRed);
+        border-radius: 5px;
+        padding: 0.2em 1em;
+        a{
+            color: white;
+
+        }
+    }
+    a{
+        text-decoration: none;
+        color: var(--colorBlue);
+        font-weight: 600;
+        font-size: 20px;
+    }
+    li:hover {
+        cursor: pointer;
+        
+    }
+}
+

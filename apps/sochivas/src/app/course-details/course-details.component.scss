@@ -1,0 +1,63 @@
+
+.details {
+    display: flex;
+    & > div{
+        height: 500px;
+        width: 33%;
+        padding: 3em;
+        // border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3{
+            font-weight: 600;
+        }
+        .box-container{
+            background-color: var(--colorWhiteBone);
+            border-radius: 15px;
+            padding: 3em;
+            & > * {
+                width: 100%;
+            }
+        }
+
+        .title-container{
+            width: 60%;
+            .line-separator{
+                width: 100%;
+                border-bottom: 4px solid #1e2e70;
+            }
+        }
+        .directors, .topics, .students{
+            width: 60%;
+            p{
+                font-weight: 500;
+                font-size: 16px;
+                color: var(--colorBlue);
+            }
+        }
+    }
+}
+
+.pricing{
+    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--colorBlue);
+    color: white;
+    h3 {
+        border-bottom: 4px solid white;
+    }
+    .prices {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: .7em;
+        font-size: 20px;
+        .student-type{
+            font-weight: bold;
+        }
+    }
+}

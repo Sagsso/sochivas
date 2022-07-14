@@ -1,0 +1,23 @@
+.sponsors-container{
+    .sponsors{
+        width: 100%;
+        // padding: 6em;
+        // display: grid;
+            padding: 1em 14em;
+            // place-content: center;
+        .top-sponsors, .bottom-sponsors {
+            display: flex;
+            width: 100%;
+            gap: 10em;
+            img{
+                height: 300px;
+            }
+        }
+        .top-sponsors{
+            justify-content: flex-start;
+        }
+        .bottom-sponsors{
+            justify-content: flex-end;
+        }
+    }
+}

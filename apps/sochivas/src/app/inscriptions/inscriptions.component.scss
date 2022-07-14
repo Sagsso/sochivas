@@ -1,0 +1,24 @@
+.section-container{
+    width: 100vw;
+    .program{
+
+    }
+
+    .inscriptions{
+        padding: 2em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .pagos{
+            text-align: center;
+            font-size: 24px;
+            color: rgb(7, 7, 38);
+        }
+    }
+}
