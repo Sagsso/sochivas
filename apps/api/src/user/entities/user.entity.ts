@@ -25,6 +25,9 @@ export class User {
     @Column({default: null})
     contact_type: string;
 
+    @Column({default: false})
+    auth_data: boolean;
+
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
     last_login: Date;
 

@@ -7,22 +7,22 @@
         <h2>INSCRIPCIONES</h2>
         <p class="txt-description">Registra tus datos para obtener información de pago y acceso al evento</p>
 
-        <form action="">
+        <form action="" #inscriptionForm="ngForm">
             <div class="mb-3">
                 <label for="full-name" class="form-label">Nombre completo</label>
-                <input [(ngModel)]="this.body.full_name" type="text" class="form-control" id="full-name" placeholder="Introduce tu nombre" name="full_name">
+                <input [(ngModel)]="this.body.full_name" type="text" class="form-control" id="full-name" placeholder="Introduce tu nombre" name="full_name" required>
             </div>
             <div class="row">
                 <div class="col-6 mb-3">
                     <label for="email" class="form-label">Correo electrónico</label>
-                    <input [(ngModel)]="this.body.email" type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                    <input [(ngModel)]="this.body.email" type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input [(ngModel)]="this.body.password" type="password" class="form-control" id="password" name="password">
+                    <input [(ngModel)]="this.body.password" type="password" class="form-control" id="password" name="password" required>
                 </div>
             </div>
-            <select [(ngModel)]="this.body.profile_type" class="form-select mb-3" aria-label="Default select example" style="cursor: pointer;" name="profileType">
+            <select [(ngModel)]="this.body.profile_type" class="form-select mb-3" aria-label="Default select example" style="cursor: pointer;" name="profileType" required>
                 <option [ngValue]="null">Selecciona una categoría</option>
                 <option value="Socios">Socios</option>
                 <option value="Médicos (no socios)">Médicos (no socios)</option>
@@ -42,16 +42,28 @@
                     </label>
                   </div>
               </div>
+              <div class="form-check mb-3">
+                <input  [(ngModel)]="this.body.auth_data" class="form-check-input" type="checkbox" value="false" id="flexCheckDefault" name="authData" required>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Autorizo compartir mis datos con las empresas auspiciadoras.
+                </label>
+              </div>
               <p class="txt-description mb-4">
                 *Después de su registro, automáticamente a su correo llegará un mensaje confirmando su inscripción, favor revisar todas sus bandejas incluída la de correo no deseado. Si tiene alguna duda o dificultad técnica puede escribirnos al correo apenuela88@gmail.com o al whatsapp: +573113031720
               </p>
               <btn-container class="d-flex justify-content-center">
-                  <button class="btn btn-red mb-5" (click)="this.register()">Registrarme</button>
+                  <button [disabled]="!this.inscriptionForm.valid || !this.body.auth_data" class="btn btn-red mb-5" (click)="this.register()">Registrarme</button>
               </btn-container>
         </form>
 
         <p class="pagos">Modalidad de pago: transferencias a la cuenta de SOCHIVAS<br>
           Nota: se solicita enviar comprobante de la transferencia a ecco@eccochile.cl.
         </p>
+
+        <h4>Live video</h4>
+        <iframe src="https://player.castr.com/live_1d1cb03005f111edbab7b53185dec948" width="100%" style="aspect-ratio: 16/9; min-height: 340px;" frameborder="0" scrolling="no" allow="autoplay" allowfullscreen  webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        <!-- <iframe class="mb-5" src="https://player.castr.com/live_1d1cb03005f111edbab7b53185dec948" frameborder="0" allow="fullscreen"></iframe> -->
+        <h4>Recorded video</h4>
+        <iframe class="mb-5" src="https://player.castr.com/vod/oFPV98nnjtM1PvhM" frameborder="0" allow="fullscreen"></iframe>
     </div>
 </div>

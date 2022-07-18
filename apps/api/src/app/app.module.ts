@@ -5,6 +5,8 @@ import { UserModule } from 'src/user/user.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -23,8 +25,13 @@ import { AppService } from './app.service';
       autoLoadEntities: true,
       
     }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: join(process.cwd(), '../', '/s/dist/melsp/'),
+    //   serveRoot: '/melsp',
+    //   exclude: ['/api*'],
+    // }),
     UserModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'sochivas-inscriptions',
@@ -13,8 +14,10 @@ export class InscriptionsComponent implements OnInit {
     email: '',
     password: '',
     profile_type: null,
-    contact_type: 'Inscripción'
+    contact_type: 'Inscripción',
+    auth_data: false
   }
+  @ViewChild('inscriptionForm') inscriptionForm!: NgForm;
 
   constructor(private http: HttpClient) {}
 
@@ -30,7 +33,8 @@ export class InscriptionsComponent implements OnInit {
       email: '',
       password: '',
       profile_type: null,
-      contact_type: 'Inscripción'
+      contact_type: 'Inscripción',
+      auth_data: false
     }
   }
 
